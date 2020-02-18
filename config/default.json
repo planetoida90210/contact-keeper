@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://planetoida90210:enough91@contactkeeper-p1psl.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://planetoida90210:enough91@contactkeeper-p1psl.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
 }
