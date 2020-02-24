@@ -1,12 +1,18 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
+import axios from "axios";
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 import {
+  GET_CONTACTS,
   ADD_CONTACT,
   DELETE_CONTACT,
   SET_CURRENT,
-  CLEAR_CURRENT
+  CLEAR_CURRENT,
+  UPDATE_CONTACT,
+  FILTER_CONTACTS,
+  CLEAR_CONTACTS,
+  CLEAR_FILTER,
+  CONTACT_ERROR
 } from "../types";
 
 const ContactState = props => {
@@ -14,52 +20,59 @@ const ContactState = props => {
     contacts: [
       {
         id: 1,
-        name: "Paweł Krajewski",
-        email: "pawelkrajewski@gmail.com",
-        phone: "222-222-222",
+        name: "Adam Nowak",
+        email: "adam@gmail.com",
+        phone: "888-888-888",
         type: "personal"
       },
       {
         id: 2,
-        name: "Daniel Cent",
-        email: "cleancity@gmail.com",
-        phone: "997-997-997",
+        name: "Kinga Rusin",
+        email: "krusin@gmail.com",
+        phone: "777-777-777",
         type: "professional"
       },
       {
         id: 3,
-        name: "Andrzej Acab",
-        email: "andrzeju@gmail.com",
-        phone: "420-420-420",
-        type: "proffesional"
+        name: "Krzysztof Jarzębina",
+        email: "kjarzebina@gmail.com",
+        phone: "111-111-111",
+        type: "professional"
       }
-    ]
+    ],
+    current: null,
+    filtered: null,
+    error: null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
-  //Add Contact
+  // Get Contacts
 
-  //Delete Contact
+  // Add Contact
 
-  //Set Current Contact
+  // Delete Contact
 
-  //Clear Current Contact
+  // Update Contact
 
-  //Update Contact
+  // Clear Contacts
 
-  //Filter Contacts
+  // Set Current Contact
 
-  //Clear Filter
+  // Clear Current Contact
+
+  // Filter Contacts
+
+  // Clear Filter
 
   return (
-    <ContactContext.provider
+    <ContactContext.Provider
       value={{
         contacts: state.contacts
       }}
     >
       {props.children}
-    </ContactContext.provider>
+    </ContactContext.Provider>
   );
 };
 
