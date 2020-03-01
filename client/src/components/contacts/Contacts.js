@@ -4,7 +4,7 @@ import ContactContext from "../../context/contact/contactContext";
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
-  const { contacts } = contactContext;
+  const { contacts, filtered } = contactContext;
   return (
     <Fragment>
       {contacts.map(contact => (
