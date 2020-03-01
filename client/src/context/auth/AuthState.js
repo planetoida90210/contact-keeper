@@ -35,7 +35,9 @@ const AuthState = props => {
       value={{
         token: state.token,
         isAuthenticated: state.isAuthenticated,
-        loading: state.loading
+        loading: state.loading,
+        user: state.user,
+        error: state.error
       }}
     >
       {props.children}
