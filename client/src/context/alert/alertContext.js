@@ -1,5 +1,5 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
-const AlertContext = useContext();
+const alertContext = createContext();
 
-export default AlertContext;
+export default alertContext;
