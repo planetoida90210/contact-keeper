@@ -8,7 +8,7 @@ const Register = () => {
   const { setAlert } = alertContext;
   const { register, error, clearErrors } = authContext;
   useEffect(() => {
-    if (error === "user already exist") {
+    if (error === "User already exists") {
       setAlert(error, "danger");
       clearErrors();
     }
