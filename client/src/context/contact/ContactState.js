@@ -25,6 +25,16 @@ const ContactState = props => {
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
+  // Get Contacts
+  const getContacts = async () => {
+    try {
+      const res = await axios.get("/api/contacts");
+      dispatch({ type: GET_CONTACTS, payload: res.data });
+    } catch (err) {
+      dispatch({ type: CONTACT_ERROR, payload: err.response.msg });
+    }
+  };
+
   // Add Contact
   const addContact = async contact => {
     const config = {
@@ -82,6 +92,7 @@ const ContactState = props => {
         clearCurrent,
         updateContact,
         filterContacts,
+        getContacts,
         clearFilter
       }}
     >
